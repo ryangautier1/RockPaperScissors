@@ -7,5 +7,34 @@
 </head>
 <body>
     
+    <script>
+
+        var rpsArray = ["Rock", "Paper", "Scissors"];
+        var userInput = prompt("Enter rock, paper, or scissors");
+        var computerInput = rpsArray[math.floor(math.random * 3)];
+        alert("Computer chooses " + computerInput);
+        var nTied = 0;
+        var nWin = 0;
+        var nLose = 0;
+        if(userInput !== "rock" && userInput !== "paper" && userInput !== "scissors"){
+            userInput = prompt("You must enter either rock, paper, or scissors. Try again.");
+        }
+        if(userInput == "rock"){
+            if(computerInput == "rock"){
+                nTied++;
+                alert("Tie! You have tied " + nTies + " times.");
+            }
+            else if(computerInput == "paper"){
+                nLose++;
+                alert("You lose! You have lost " + nLose + " times.");
+            }
+            else {
+                nWin++;
+                alert("You win! You have won " + nWin + " times.");
+            }
+        }
+
+    </script>
+
 </body>
 </html>
