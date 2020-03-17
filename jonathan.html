@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        main();
+
+        function main() {
+            const maxNumberOfGames = 10;
+
+            var rpsList = ["Rock", "Paper", "Scissors"];
+
+            var numberOfGames = 0;
+            var numberOfWins = 0;
+            var numberOfTies = 0;
+
+            var msgPrompt;
+            var msgResult;
+            var userPickRaw, userPickToken, userPick;
+            var computerPick;
+
+            for (var gameNumber = 0; gameNumber < maxNumberOfGames; gameNumber++) {
+
+                //  Get user pick
+                msgPrompt = "Match #" + (numberOfGames + 1) + ":\n" +
+                            "Pick (R)ock, (P)aper, or (S)cissors:"
+                            
+                userPickRaw = prompt(msgPrompt);
+                userPickToken = userPickRaw.trim();
+                userPickToken = userPickToken[0];
+                userPickToken = userPickToken.toLowerCase();
+
+                switch (userPickToken) {
+                    case "r":
+                        userPick = 0;
+                        break;
+
+                    case "p":
+                        userPick = 1;
+                        break;
+
+                    case "s":
+                        userPick = 2;
+                        break;
+
+                    default:
+                        userPick = -1;
+                }
+
+                msgResult = "User picks " + rpsList[userPick] + ".\n";
+
+                //  Computer picks randomly. Room for some advanced AI here...
+                computerPick = Math.floor(Math.random() * rpsList.length);
+                msgResult += "Computer picks " + rpsList[computerPick] + ".\n";
+
+                //  Apply win condition
+                if ((userPick == (computerPick - 1)) || (userPick == 0) && (computerPick == 3)) {
+                    numberOfWins++;
+                    msgResult += "User wins!";
+                } else if (userPick == computerPick) {
+                    numberOfTies++;
+                    msgResult += "Tie!";
+                } else {
+                    msgResult += "Computer wins!";
+                }
+
+                alert(msgResult);
+            }
+
+
+        
+
+        }
+    </script>
+</body>
+</html>
