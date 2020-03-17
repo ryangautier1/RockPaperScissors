@@ -1,40 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
-    
+
     <script>
 
-        var rpsArray = ["Rock", "Paper", "Scissors"];
-        var userInput = prompt("Enter rock, paper, or scissors");
-        var computerInput = rpsArray[math.floor(math.random * 3)];
-        alert("Computer chooses " + computerInput);
+        // Initializing variables
+        var rpsArray = ["rock", "paper", "scissors"];
         var nTied = 0;
         var nWin = 0;
         var nLose = 0;
-        if(userInput !== "rock" && userInput !== "paper" && userInput !== "scissors"){
-            userInput = prompt("You must enter either rock, paper, or scissors. Try again.");
-        }
-        if(userInput == "rock"){
-            if(computerInput == "rock"){
-                nTied++;
-                alert("Tie! You have tied " + nTies + " times.");
-            }
-            else if(computerInput == "paper"){
-                nLose++;
-                alert("You lose! You have lost " + nLose + " times.");
-            }
-            else {
-                nWin++;
-                alert("You win! You have won " + nWin + " times.");
-            }
-        }
+        var playAgain = true;
 
+        //While loop for game
+        while (playAgain) {
+
+            // Taking user input 
+            var userInput = prompt("Enter rock, paper, or scissors");
+            // Checking if user input is valid
+            while (userInput !== "rock" && userInput !== "paper" && userInput !== "scissors") {
+                if (userInput !== "rock" && userInput !== "paper" && userInput !== "scissors") {
+                    userInput = prompt("You must enter either rock, paper, or scissors. Try again.");
+                }
+            }
+
+            // Computer picking rock, paper, or scissors
+            var computerInput = rpsArray[Math.floor(Math.random() * 3)];
+            alert("Computer chooses " + computerInput);
+
+            // If user chooses rock...
+            if (userInput == "rock") {
+                if (computerInput == "rock") {
+                    nTied++;
+                    alert("Tie! You have tied " + nTied + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+                else if (computerInput == "paper") {
+                    nLose++;
+                    alert("You lose! You have lost " + nLose + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+                else {
+                    nWin++;
+                    alert("You win! You have won " + nWin + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+            }
+
+            //if user chooses paper...
+            if (userInput == "paper") {
+                if (computerInput == "paper") {
+                    nTied++;
+                    alert("Tie! You have tied " + nTied + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+                else if (computerInput == "scissors") {
+                    nLose++;
+                    alert("You lose! You have lost " + nLose + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+                else {
+                    nWin++;
+                    alert("You win! You have won " + nWin + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+            }
+
+
+            //If user chooses scissors
+            if (userInput == "scissors") {
+                if (computerInput == "scissors") {
+                    nTied++;
+                    alert("Tie! You have tied " + nTied + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+                else if (computerInput == "rock") {
+                    nLose++;
+                    alert("You lose! You have lost " + nLose + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+                else {
+                    nWin++;
+                    alert("You win! You have won " + nWin + " times.");
+                    if (confirm("Play again?")) {
+                        playAgain = true;
+                    }
+                    else {
+                        alert("Wins: " + nWin + ", Losses: " + nLose + ", Ties: " + nTied);
+                        playAgain = false;
+                    }
+                }
+            }
+        }
     </script>
 
 </body>
+
 </html>
