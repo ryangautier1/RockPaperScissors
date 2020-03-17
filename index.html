@@ -11,23 +11,30 @@
 
     <script>
 
+        // Initializing variables
         var rpsArray = ["rock", "paper", "scissors"];
         var nTied = 0;
         var nWin = 0;
         var nLose = 0;
         var playAgain = true;
 
+        //While loop for game
         while (playAgain) {
 
+            // Taking user input 
             var userInput = prompt("Enter rock, paper, or scissors");
+            // Checking if user input is valid
             while (userInput !== "rock" && userInput !== "paper" && userInput !== "scissors") {
                 if (userInput !== "rock" && userInput !== "paper" && userInput !== "scissors") {
                     userInput = prompt("You must enter either rock, paper, or scissors. Try again.");
                 }
             }
+
+            // Computer picking rock, paper, or scissors
             var computerInput = rpsArray[Math.floor(Math.random() * 3)];
             alert("Computer chooses " + computerInput);
 
+            // If user chooses rock...
             if (userInput == "rock") {
                 if (computerInput == "rock") {
                     nTied++;
@@ -64,6 +71,7 @@
                 }
             }
 
+            //if user chooses paper...
             if (userInput == "paper") {
                 if (computerInput == "paper") {
                     nTied++;
@@ -100,6 +108,8 @@
                 }
             }
 
+
+            //If user chooses scissors
             if (userInput == "scissors") {
                 if (computerInput == "scissors") {
                     nTied++;
